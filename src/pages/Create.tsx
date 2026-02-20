@@ -3,11 +3,11 @@ import { Sparkles, Upload, Music, Copy, Download, Check, ChevronRight, RefreshCw
 import Navbar from "@/components/Navbar";
 
 const MOODS = [
-  { emoji: "😊", label: "Happy", color: "from-yellow-500/20 to-orange-500/20 border-yellow-500/40", glow: "shadow-yellow-500/20" },
-  { emoji: "😢", label: "Sad", color: "from-blue-500/20 to-indigo-500/20 border-blue-500/40", glow: "shadow-blue-500/20" },
-  { emoji: "🎉", label: "Excited", color: "from-pink-500/20 to-red-500/20 border-pink-500/40", glow: "shadow-pink-500/20" },
-  { emoji: "💕", label: "Romantic", color: "from-rose-500/20 to-pink-500/20 border-rose-500/40", glow: "shadow-rose-500/20" },
-  { emoji: "😎", label: "Chill", color: "from-teal-500/20 to-green-500/20 border-teal-500/40", glow: "shadow-teal-500/20" },
+  { emoji: "😊", label: "Happy", color: "from-emerald-500/10 to-emerald-600/10 border-emerald-500/30", glow: "shadow-emerald-500/10" },
+  { emoji: "😢", label: "Sad", color: "from-slate-500/10 to-slate-600/10 border-slate-500/30", glow: "shadow-slate-500/10" },
+  { emoji: "🎉", label: "Excited", color: "from-primary/10 to-primary/20 border-primary/30", glow: "shadow-primary/10" },
+  { emoji: "💕", label: "Romantic", color: "from-purple-500/10 to-purple-600/10 border-purple-500/30", glow: "shadow-purple-500/10" },
+  { emoji: "😎", label: "Chill", color: "from-cyan-500/10 to-cyan-600/10 border-cyan-500/30", glow: "shadow-cyan-500/10" },
 ];
 
 const SUGGESTIONS: Record<string, { songs: string[]; captions: string[] }> = {
@@ -143,15 +143,15 @@ const Create = () => {
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
                     step > i + 1
-                      ? "gradient-bg text-white"
+                      ? "bg-primary text-white"
                       : step === i + 1
-                      ? "gradient-bg text-white animate-pulse-glow"
+                      ? "bg-primary text-white"
                       : "bg-muted text-muted-foreground"
                   }`}
                 >
                   {step > i + 1 ? <Check className="w-4 h-4" /> : i + 1}
                 </div>
-                <span className={`text-xs mt-1 font-medium ${step === i + 1 ? "gradient-text" : "text-muted-foreground"}`}>
+                <span className={`text-xs mt-1 font-medium ${step === i + 1 ? "text-primary" : "text-muted-foreground"}`}>
                   {s}
                 </span>
               </div>
@@ -166,15 +166,15 @@ const Create = () => {
         {step === 1 && (
           <div className="animate-fade-up">
             <div className="text-center mb-8">
-              <h2 className="font-display text-3xl font-bold mb-2">Aaj ka mood kya hai? 🎭</h2>
-              <p className="text-muted-foreground">Apna mood chunao aur baaki hum karenge</p>
+              <h2 className="font-display text-3xl font-bold mb-2">Select Your Mood 🎭</h2>
+              <p className="text-muted-foreground">Choose your mood and we'll handle the rest</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {MOODS.map((mood) => (
                 <button
                   key={mood.label}
                   onClick={() => setSelectedMood(mood.label)}
-                  className={`glass-card bg-gradient-to-br ${mood.color} border p-6 rounded-2xl flex flex-col items-center gap-3 transition-all duration-200 hover:scale-105 ${
+                  className={`glass-card bg-gradient-to-br ${mood.color} border p-6 rounded-xl flex flex-col items-center gap-3 transition-all duration-200 hover:scale-105 ${
                     selectedMood === mood.label ? `ring-2 ring-primary scale-105 shadow-lg ${mood.glow}` : ""
                   }`}
                 >
@@ -190,7 +190,7 @@ const Create = () => {
                 </p>
                 <button
                   onClick={() => setStep(2)}
-                  className="gradient-bg text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2 mx-auto hover:opacity-90 transition-all hover:scale-105 animate-pulse-glow"
+                  className="bg-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 mx-auto hover:bg-primary/90 transition-all"
                 >
                   Next: Add Photo <ChevronRight className="w-4 h-4" />
                 </button>
@@ -241,7 +241,7 @@ const Create = () => {
               <button
                 onClick={handleGenerate}
                 disabled={!photo || isGenerating}
-                className="flex-2 gradient-bg text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2 justify-center hover:opacity-90 transition-all animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed flex-1"
+                className="flex-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 justify-center hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-1"
               >
                 {isGenerating ? (
                   <>
@@ -281,9 +281,9 @@ const Create = () => {
                     <button
                       key={song}
                       onClick={() => setSelectedSong(song)}
-                      className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm font-medium ${
                         selectedSong === song
-                          ? "gradient-bg text-white"
+                          ? "bg-primary text-white"
                           : "bg-muted hover:bg-muted/80 text-foreground"
                       }`}
                     >
@@ -304,9 +304,9 @@ const Create = () => {
                     <button
                       key={caption}
                       onClick={() => setSelectedCaption(caption)}
-                      className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 text-sm ${
+                      className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm ${
                         selectedCaption === caption
-                          ? "gradient-bg text-white font-medium"
+                          ? "bg-primary text-white font-medium"
                           : "bg-muted hover:bg-muted/80 text-foreground"
                       }`}
                     >
@@ -324,7 +324,7 @@ const Create = () => {
               <button
                 onClick={() => setStep(4)}
                 disabled={!selectedSong || !selectedCaption}
-                className="flex-1 gradient-bg text-white py-3 rounded-xl font-semibold flex items-center gap-2 justify-center animate-pulse-glow hover:opacity-90 transition-all disabled:opacity-50"
+                className="flex-1 bg-primary text-white py-3 rounded-lg font-semibold flex items-center gap-2 justify-center hover:bg-primary/90 transition-all disabled:opacity-50"
               >
                 <Sparkles className="w-4 h-4" />
                 Preview Story
@@ -358,10 +358,10 @@ const Create = () => {
                     <div className="h-full w-2/3 gradient-bg rounded-full" />
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                       <Sparkles className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-white text-xs font-semibold">VibePost Story</span>
+                    <span className="text-white text-xs font-semibold">Story Editor</span>
                   </div>
                 </div>
 
@@ -389,7 +389,7 @@ const Create = () => {
                 {copiedCaption ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                 {copiedCaption ? "Copied!" : "Copy Caption"}
               </button>
-              <button className="gradient-bg text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 animate-pulse-glow">
+              <button className="bg-primary text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
                 <Download className="w-4 h-4" />
                 Save Story
               </button>

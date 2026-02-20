@@ -6,15 +6,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
-import Gallery from "./pages/Gallery";
 import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
+import CursorGlow from "./components/CursorGlow";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <CursorGlow />
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -22,7 +23,6 @@ const App = () => (
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

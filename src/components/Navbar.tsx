@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { Sparkles, Home, Image, HelpCircle, LogOut } from "lucide-react";
+import { Sparkles, Home, HelpCircle, LogOut } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const location = useLocation();
@@ -7,7 +8,6 @@ const Navbar = () => {
   const links = [
     { to: "/home", label: "Home", icon: Home },
     { to: "/create", label: "Create", icon: Sparkles },
-    { to: "/gallery", label: "Gallery", icon: Image },
     { to: "/how-it-works", label: "How It Works", icon: HelpCircle },
   ];
 
@@ -15,10 +15,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/home" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center glow-sm">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
-          <span className="font-display text-lg font-bold gradient-text">VibePost</span>
+          <span className="font-display text-lg font-bold text-foreground">Story Editor</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
@@ -28,7 +28,7 @@ const Navbar = () => {
               to={to}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 location.pathname === to
-                  ? "gradient-bg text-white glow-sm"
+                  ? "bg-primary text-white"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
@@ -38,13 +38,16 @@ const Navbar = () => {
           ))}
         </div>
 
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <LogOut className="w-4 h-4" />
-          <span className="hidden md:block">Logout</span>
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+            <span className="hidden md:block">Logout</span>
+          </Link>
+        </div>
       </div>
 
       {/* Mobile bottom nav */}
@@ -54,7 +57,7 @@ const Navbar = () => {
             key={to}
             to={to}
             className={`flex flex-col items-center gap-1 px-3 py-1 rounded-lg text-xs transition-all ${
-              location.pathname === to ? "gradient-text" : "text-muted-foreground"
+              location.pathname === to ? "text-primary" : "text-muted-foreground"
             }`}
           >
             <Icon className={`w-5 h-5 ${location.pathname === to ? "text-primary" : ""}`} />
