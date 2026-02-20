@@ -8,31 +8,27 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      icon: "🎭",
       title: "Apna Mood Choose Karo",
       desc: "Happy, Sad, Excited, Romantic, ya Chill — jo bhi feel ho raha hai, woh chunao. Hamara system tumhare mood ke hisaab se sab tayyar karta hai.",
-      color: "from-purple-500/20 to-pink-500/20 border-purple-500/30",
+      color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80",
     },
     {
       number: "02",
-      icon: "📸",
       title: "Photo Upload Karo",
       desc: "Woh photo add karo jo tumhara Instagram story ya post mein lagani hai. JPG, PNG, WEBP — sab formats supported hain.",
-      color: "from-blue-500/20 to-cyan-500/20 border-blue-500/30",
+      color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80",
     },
     {
       number: "03",
-      icon: "✨",
       title: "Magic Generate Karo",
       desc: "Hamara system tumhare mood aur photo ke hisaab se trending songs aur perfect captions suggest karta hai — Hindi, English, Hinglish mein!",
-      color: "from-pink-500/20 to-red-500/20 border-pink-500/30",
+      color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80",
     },
     {
       number: "04",
-      icon: "🚀",
       title: "Post & Share Karo",
       desc: "Apni pasand ka song aur caption chunao. Story preview dekho, caption copy karo, aur seedha Instagram pe post kar do!",
-      color: "from-green-500/20 to-teal-500/20 border-green-500/30",
+      color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80",
     },
   ];
 
@@ -65,7 +61,7 @@ const HowItWorks = () => {
             How It <span className="gradient-text">Works</span>
           </h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-            Sirf 4 steps mein apni Instagram story ko amazing banao! 🔥
+            Sirf 4 steps mein apni Instagram story ko amazing banao!
           </p>
         </div>
 
@@ -84,7 +80,6 @@ const HowItWorks = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-3xl">{step.icon}</span>
                   <h3 className="font-display text-xl font-bold">{step.title}</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">{step.desc}</p>

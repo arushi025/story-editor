@@ -7,40 +7,36 @@ const SAMPLE_POSTS = [
   {
     id: 1,
     mood: "Happy",
-    emoji: "😊",
     song: "Kala Chashma – Baar Baar Dekho",
-    caption: "Khushi ho toh show karo! 😊✨ #HappyVibes",
-    color: "from-yellow-500/30 to-orange-500/30",
+    caption: "Khushi ho toh show karo! #HappyVibes",
+    color: "from-neutral-800/60 to-neutral-950/80",
     date: "Feb 19, 2026",
     liked: true,
   },
   {
     id: 2,
     mood: "Romantic",
-    emoji: "💕",
     song: "Raataan Lambiyan – Shershaah",
-    caption: "Tum mere liye likhi gayi ek nazm ho 💕 #Love",
-    color: "from-rose-500/30 to-pink-500/30",
+    caption: "Tum mere liye likhi gayi ek nazm ho #Love",
+    color: "from-neutral-800/60 to-neutral-950/80",
     date: "Feb 18, 2026",
     liked: false,
   },
   {
     id: 3,
     mood: "Excited",
-    emoji: "🎉",
     song: "Dynamite – BTS",
-    caption: "LET'S GOOOO! 🎉🔥 #Excited #Vibes",
-    color: "from-pink-500/30 to-red-500/30",
+    caption: "LET'S GOOOO! #Excited #Vibes",
+    color: "from-neutral-800/60 to-neutral-950/80",
     date: "Feb 17, 2026",
     liked: true,
   },
   {
     id: 4,
     mood: "Chill",
-    emoji: "😎",
     song: "Iktara – Wake Up Sid",
-    caption: "Slow down, sab theek hai ☕ #ChillVibes",
-    color: "from-teal-500/30 to-green-500/30",
+    caption: "Slow down, sab theek hai #ChillVibes",
+    color: "from-neutral-800/60 to-neutral-950/80",
     date: "Feb 15, 2026",
     liked: false,
   },
@@ -85,7 +81,6 @@ const Gallery = () => {
 
         {posts.length === 0 ? (
           <div className="glass-card rounded-2xl p-16 text-center">
-            <span className="text-6xl block mb-4">📭</span>
             <h3 className="font-display text-2xl font-bold mb-2">Abhi kuch nahi hai</h3>
             <p className="text-muted-foreground mb-6">Pehli story create karo!</p>
             <button
@@ -105,7 +100,7 @@ const Gallery = () => {
               >
                 {/* Mock story frame */}
                 <div className="relative aspect-video bg-gradient-to-br from-card to-muted flex items-center justify-center">
-                  <span className="text-6xl">{post.emoji}</span>
+                  <span className="text-lg font-semibold text-foreground">{post.mood} Mood</span>
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                     <div className="flex items-center gap-2">
                       <Music className="w-3 h-3 text-white" />
@@ -117,7 +112,6 @@ const Gallery = () => {
                 {/* Content */}
                 <div className="p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-lg">{post.emoji}</span>
                     <span className="text-xs font-semibold text-primary">{post.mood} Mood</span>
                     <span className="text-xs text-muted-foreground ml-auto">{post.date}</span>
                   </div>
@@ -128,7 +122,7 @@ const Gallery = () => {
                       onClick={() => toggleLike(post.id)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-all ${
                         likedPosts.includes(post.id)
-                          ? "bg-pink-500/20 text-pink-400 border border-pink-500/30"
+                          ? "bg-foreground/10 text-foreground border border-foreground/40"
                           : "bg-muted text-muted-foreground hover:bg-muted/80"
                       }`}
                     >

@@ -34,7 +34,7 @@ const Login = () => {
             <Sparkles className="w-7 h-7 text-white" />
           </div>
           <h1 className="font-display text-4xl font-bold gradient-text">VibePost</h1>
-          <p className="text-muted-foreground mt-2">Create stories that vibe ✨</p>
+          <p className="text-muted-foreground mt-2">Create stories that vibe</p>
         </div>
 
         {/* Card */}

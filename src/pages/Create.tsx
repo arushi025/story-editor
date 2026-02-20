@@ -3,92 +3,92 @@ import { Sparkles, Upload, Music, Copy, Download, Check, ChevronRight, RefreshCw
 import Navbar from "@/components/Navbar";
 
 const MOODS = [
-  { emoji: "😊", label: "Happy", color: "from-emerald-500/10 to-emerald-600/10 border-emerald-500/30", glow: "shadow-emerald-500/10" },
-  { emoji: "😢", label: "Sad", color: "from-slate-500/10 to-slate-600/10 border-slate-500/30", glow: "shadow-slate-500/10" },
-  { emoji: "🎉", label: "Excited", color: "from-primary/10 to-primary/20 border-primary/30", glow: "shadow-primary/10" },
-  { emoji: "💕", label: "Romantic", color: "from-purple-500/10 to-purple-600/10 border-purple-500/30", glow: "shadow-purple-500/10" },
-  { emoji: "😎", label: "Chill", color: "from-cyan-500/10 to-cyan-600/10 border-cyan-500/30", glow: "shadow-cyan-500/10" },
+  { label: "Happy", color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80", glow: "shadow-neutral-900/40" },
+  { label: "Sad", color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80", glow: "shadow-neutral-900/40" },
+  { label: "Excited", color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80", glow: "shadow-neutral-900/40" },
+  { label: "Romantic", color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80", glow: "shadow-neutral-900/40" },
+  { label: "Chill", color: "from-neutral-800/60 to-neutral-950/80 border-neutral-700/80", glow: "shadow-neutral-900/40" },
 ];
 
 const SUGGESTIONS: Record<string, { songs: string[]; captions: string[] }> = {
   Happy: {
     songs: [
-      "🎵 Kala Chashma – Baar Baar Dekho",
-      "🎵 Dil Dhadakne Do – Zindagi Na Milegi Dobara",
-      "🎵 Good 4 U – Olivia Rodrigo",
-      "🎵 Levitating – Dua Lipa",
-      "🎵 Kesariya – Brahmastra",
+      "Kala Chashma – Baar Baar Dekho",
+      "Dil Dhadakne Do – Zindagi Na Milegi Dobara",
+      "Good 4 U – Olivia Rodrigo",
+      "Levitating – Dua Lipa",
+      "Kesariya – Brahmastra",
     ],
     captions: [
-      "Khushi ho toh show karo! 😊✨ #HappyVibes",
-      "Life is better when you're laughing 🌟 #GoodTimes",
-      "Main apni favourite hoon 💛 #SelfLove #Happy",
-      "Smile toh banta hai! 😁 #Happiness #Vibes",
-      "Chhoti chhoti khushiyaan, badi badi yaadein 🌼 #Blessed",
+      "Khushi ho toh show karo! #HappyVibes",
+      "Life is better when you're laughing #GoodTimes",
+      "Main apni favourite hoon #SelfLove #Happy",
+      "Smile toh banta hai! #Happiness #Vibes",
+      "Chhoti chhoti khushiyaan, badi badi yaadein #Blessed",
     ],
   },
   Sad: {
     songs: [
-      "🎵 Tere Bina – Guru",
-      "🎵 Agar Tum Saath Ho – Tamasha",
-      "🎵 Drivers License – Olivia Rodrigo",
-      "🎵 Channa Mereya – Ae Dil Hai Mushkil",
-      "🎵 Fix You – Coldplay",
+      "Tere Bina – Guru",
+      "Agar Tum Saath Ho – Tamasha",
+      "Drivers License – Olivia Rodrigo",
+      "Channa Mereya – Ae Dil Hai Mushkil",
+      "Fix You – Coldplay",
     ],
     captions: [
-      "Kuch baatein dil mein hi rehti hain 💔 #Feelings",
-      "Aankhon mein teri, ajab si ajab si adaayein hain 🌧️",
-      "Sometimes silence speaks the loudest 🖤 #Sad",
-      "Waqt sab theek kar deta hai... eventually 💫",
-      "Dard bhi ek ehsaas hai 🌙 #EmotionalVibes",
+      "Kuch baatein dil mein hi rehti hain #Feelings",
+      "Aankhon mein teri, ajab si ajab si adaayein hain",
+      "Sometimes silence speaks the loudest #Sad",
+      "Waqt sab theek kar deta hai... eventually",
+      "Dard bhi ek ehsaas hai #EmotionalVibes",
     ],
   },
   Excited: {
     songs: [
-      "🎵 Badtameez Dil – Yeh Jawaani Hai Deewani",
-      "🎵 Can't Stop the Feeling – Justin Timberlake",
-      "🎵 Dynamite – BTS",
-      "🎵 Gallan Goodiyaan – Dil Dhadakne Do",
-      "🎵 Amplifier – Imran Khan",
+      "Badtameez Dil – Yeh Jawaani Hai Deewani",
+      "Can't Stop the Feeling – Justin Timberlake",
+      "Dynamite – BTS",
+      "Gallan Goodiyaan – Dil Dhadakne Do",
+      "Amplifier – Imran Khan",
     ],
     captions: [
-      "LET'S GOOOO! 🎉🔥 #Excited #Vibes",
-      "Main ready hoon! Aur tum? 🙌 #HypeMode",
-      "Energy level: 100% 🚀 #ExcitedAF",
-      "Celebrations loading… 🎊 #Party #Fun",
-      "Yeh moment toh yaad rahega! 💥 #Unforgettable",
+      "LET'S GOOOO! #Excited #Vibes",
+      "Main ready hoon! Aur tum? #HypeMode",
+      "Energy level: 100% #ExcitedAF",
+      "Celebrations loading… #Party #Fun",
+      "Yeh moment toh yaad rahega! #Unforgettable",
     ],
   },
   Romantic: {
     songs: [
-      "🎵 Tum Hi Ho – Aashiqui 2",
-      "🎵 Raataan Lambiyan – Shershaah",
-      "🎵 Perfect – Ed Sheeran",
-      "🎵 Ik Vaari Aa – Raabta",
-      "🎵 Pehla Nasha – Jo Jeeta Wohi Sikandar",
+      "Tum Hi Ho – Aashiqui 2",
+      "Raataan Lambiyan – Shershaah",
+      "Perfect – Ed Sheeran",
+      "Ik Vaari Aa – Raabta",
+      "Pehla Nasha – Jo Jeeta Wohi Sikandar",
     ],
     captions: [
-      "Tum mere liye likhi gayi ek nazm ho 💕 #Love",
-      "Saath ho tum toh kya chahiye aur 🌹 #Romance",
-      "You are my favorite notification 💌 #Cute",
-      "Dil ne dil ko dhoonda hai ❤️ #TrueLove",
-      "With you, every moment is a beautiful story 🌸",
+      "Tum mere liye likhi gayi ek nazm ho #Love",
+      "Saath ho tum toh kya chahiye aur #Romance",
+      "You are my favorite notification #Cute",
+      "Dil ne dil ko dhoonda hai #TrueLove",
+      "With you, every moment is a beautiful story",
     ],
   },
   Chill: {
     songs: [
-      "🎵 Iktara – Wake Up Sid",
-      "🎵 Lazy Sunday – Ritviz",
-      "🎵 Blinding Lights – The Weeknd",
-      "🎵 Summertime Sadness – Lana Del Rey",
-      "🎵 Lag Ja Gale – Rekha",
+      "Iktara – Wake Up Sid",
+      "Lazy Sunday – Ritviz",
+      "Blinding Lights – The Weeknd",
+      "Summertime Sadness – Lana Del Rey",
+      "Lag Ja Gale – Rekha",
     ],
     captions: [
-      "Slow down, sab theek hai ☕ #ChillVibes",
-      "Good vibes only 🌿 #Chill #Relax",
-      "Not all those who wander are lost 🌊 #Peace",
-      "Weekend mood activated 😎 #NoStress",
-      "Life mein thoda pause bhi zaroori hai 🌙 #Chill",
+      "Slow down, sab theek hai #ChillVibes",
+      "Good vibes only #Chill #Relax",
+      "Not all those who wander are lost #Peace",
+      "Weekend mood activated #NoStress",
+      "Life mein thoda pause bhi zaroori hai #Chill",
     ],
   },
 };
@@ -166,7 +166,7 @@ const Create = () => {
         {step === 1 && (
           <div className="animate-fade-up">
             <div className="text-center mb-8">
-              <h2 className="font-display text-3xl font-bold mb-2">Select Your Mood 🎭</h2>
+              <h2 className="font-display text-3xl font-bold mb-2">Select Your Mood</h2>
               <p className="text-muted-foreground">Choose your mood and we'll handle the rest</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -178,15 +178,14 @@ const Create = () => {
                     selectedMood === mood.label ? `ring-2 ring-primary scale-105 shadow-lg ${mood.glow}` : ""
                   }`}
                 >
-                  <span className="text-5xl">{mood.emoji}</span>
-                  <span className="font-semibold text-foreground">{mood.label}</span>
+                  <span className="font-semibold text-foreground text-lg">{mood.label}</span>
                 </button>
               ))}
             </div>
             {selectedMood && (
               <div className="mt-8 text-center animate-fade-up">
                 <p className="text-muted-foreground mb-4">
-                  Great choice! <strong className="gradient-text">{selectedMood}</strong> mood selected ✓
+                  Great choice! <strong className="gradient-text">{selectedMood}</strong> mood selected
                 </p>
                 <button
                   onClick={() => setStep(2)}
@@ -203,7 +202,7 @@ const Create = () => {
         {step === 2 && (
           <div className="animate-fade-up">
             <div className="text-center mb-8">
-              <h2 className="font-display text-3xl font-bold mb-2">Apni photo add karo 📸</h2>
+              <h2 className="font-display text-3xl font-bold mb-2">Apni photo add karo</h2>
               <p className="text-muted-foreground">Woh photo jo tum Instagram pe lagana chahte ho</p>
             </div>
 
@@ -236,7 +235,7 @@ const Create = () => {
                 onClick={() => setStep(1)}
                 className="flex-1 glass-card py-3 rounded-xl font-semibold hover:border-border/80 transition-all"
               >
-                ← Back
+                Back
               </button>
               <button
                 onClick={handleGenerate}
@@ -264,7 +263,7 @@ const Create = () => {
           <div className="animate-fade-up">
             <div className="text-center mb-8">
               <h2 className="font-display text-3xl font-bold mb-2">
-                Your <span className="gradient-text">{selectedMood}</span> Vibes 🔥
+                Your <span className="gradient-text">{selectedMood}</span> Vibes
               </h2>
               <p className="text-muted-foreground">Song aur caption chunao</p>
             </div>
@@ -296,7 +295,6 @@ const Create = () => {
               {/* Captions */}
               <div className="glass-card rounded-2xl p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-lg">✍️</span>
                   <h3 className="font-display text-lg font-bold">Caption Options</h3>
                 </div>
                 <div className="space-y-2">
@@ -319,7 +317,7 @@ const Create = () => {
 
             <div className="flex gap-4 mt-8">
               <button onClick={() => setStep(2)} className="flex-1 glass-card py-3 rounded-xl font-semibold transition-all">
-                ← Back
+                Back
               </button>
               <button
                 onClick={() => setStep(4)}
@@ -338,7 +336,7 @@ const Create = () => {
           <div className="animate-fade-up">
             <div className="text-center mb-8">
               <h2 className="font-display text-3xl font-bold mb-2">
-                Story <span className="gradient-text">Ready!</span> 🎊
+                Story <span className="gradient-text">Ready!</span>
               </h2>
               <p className="text-muted-foreground">Yeh rahi teri Instagram-ready story</p>
             </div>
@@ -370,7 +368,7 @@ const Create = () => {
                   {selectedSong && (
                     <div className="glass-card rounded-xl px-3 py-2 mb-3 flex items-center gap-2">
                       <Music className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-white text-xs font-medium truncate">{selectedSong.replace("🎵 ", "")}</span>
+                      <span className="text-white text-xs font-medium truncate">{selectedSong}</span>
                     </div>
                   )}
                   {selectedCaption && (
